@@ -2,6 +2,14 @@
 
 title 000_main_ddos
 
+:kill_all
+	cmdow\bin\Release\cmdow.exe 000_dos_bot1 /END
+	cmdow\bin\Release\cmdow.exe 000_dos_bot2 /END
+	cmdow\bin\Release\cmdow.exe 000_dos_bot3 /END
+	cmdow\bin\Release\cmdow.exe 000_dos_bot4 /END
+	cmdow\bin\Release\cmdow.exe 000_dos_logo /END
+exit /b 0
+
 ::init the proper position of the main console it sef so it wont be obverlapped by the ddos hud
 ::cant be done from the window it self so call a helper file
 start set_main.bat
