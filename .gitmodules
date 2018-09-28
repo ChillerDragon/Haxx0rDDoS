@@ -1,0 +1,3 @@
+[submodule "cmdow"]
+	path = cmdow
+	url = https://github.com/ritchielawrence/cmdow
