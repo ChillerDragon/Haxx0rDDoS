@@ -1,9 +1,9 @@
 @echo off
 
-title set_main
+title 000_set_main
 
 ::init the proper position so it wont be obverlapped by the ddos hud
-cmdow\bin\Release\cmdow.exe main_ddos* /mov 500 500
+cmdow\bin\Release\cmdow.exe 000_main_ddos /mov 500 500
 
 :haxx0r_nums
 
