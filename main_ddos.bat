@@ -2,14 +2,6 @@
 
 title 000_main_ddos
 
-:kill_all
-	cmdow\bin\Release\cmdow.exe 000_dos_bot1 /END
-	cmdow\bin\Release\cmdow.exe 000_dos_bot2 /END
-	cmdow\bin\Release\cmdow.exe 000_dos_bot3 /END
-	cmdow\bin\Release\cmdow.exe 000_dos_bot4 /END
-	cmdow\bin\Release\cmdow.exe 000_dos_logo /END
-exit /b 0
-
 ::init the proper position of the main console it sef so it wont be obverlapped by the ddos hud
 ::cant be done from the window it self so call a helper file
 start set_main.bat
@@ -19,11 +11,15 @@ cmdow\bin\Release\cmdow.exe 000_set_main /mov 1300 500
 @echo. > haxlog.txt
 cls
 set /p ip=ip: 
-echo ddosing %ip%...
 
-if %ip%=="127.0.0.1" (
+if %ip%==127.0.0.1 (
 	echo "fucked ur self nobo"
+) else if %ip%==q (
+	echo qutting...
+	call :kill_all
 )
+
+echo ddosing %ip%...
 
 @echo %RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM% > haxlog.txt
 
@@ -41,3 +37,13 @@ cmdow\bin\Release\cmdow.exe 000_dos_bot4 /mov 1600 10
 
 pause>nul
 goto ddos
+
+:kill_all
+	cmdow\bin\Release\cmdow.exe 000_dos_bot1 /END
+	cmdow\bin\Release\cmdow.exe 000_dos_bot2 /END
+	cmdow\bin\Release\cmdow.exe 000_dos_bot3 /END
+	cmdow\bin\Release\cmdow.exe 000_dos_bot4 /END
+	cmdow\bin\Release\cmdow.exe 000_dos_logo /END
+	cmdow\bin\Release\cmdow.exe 000_set_main /END
+	exit
+exit /b 0
