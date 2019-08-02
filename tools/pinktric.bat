@@ -1,0 +1,7 @@
+@echo off
+color b
+:loop
+
+echo %RANDOM%--%RANDOM%%RANDOM%%RANDOM%---%RANDOM%%RANDOM%%RANDOM%-%RANDOM%-%RANDOM%%RANDOM%%RANDOM%--%RANDOM%%RANDOM%%RANDOM%
+
+goto loop
